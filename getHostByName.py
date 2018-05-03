@@ -1,8 +1,6 @@
 #!/usr/bin/python
-#
-#  uzycie:
-#  ./host.py domena
-#
+
+
 
 import socket, sys,time
 
