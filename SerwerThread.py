@@ -1,3 +1,6 @@
+#!/usr/bin/python
+#coding: utf-8
+
 import select
 import socket
 import sys
@@ -8,7 +11,7 @@ class Server:
     def __init__(self):
         self.host = ''
         self.port = 7677
-        self.backlog = 5
+        self.backlog = 13
         self.size = 1024
         self.server = None
         self.threads = []
@@ -17,7 +20,7 @@ class Server:
         try:
             self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.server.bind((self.host, self.port))
-            self.server.listen(5)
+            self.server.listen(13)
         except socket.error, (value, message):
             if self.server:
                 self.server.close()
@@ -44,8 +47,7 @@ class Server:
                     junk = sys.stdin.readline()
                     running = 0
 
-                    # close all threads
-
+        # close all threads
         self.server.close()
         for c in self.threads:
             c.join()

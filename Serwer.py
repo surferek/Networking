@@ -1,8 +1,6 @@
 #!/usr/bin/python
-#
-# SERWER
-#
-import sys
+#coding: utf-8
+
 import socket
 
 def server():
@@ -19,7 +17,8 @@ while 1:
 
     conn, addr = serv.accept()
     while 1:
-        message = conn.recv(64)
+        message = conn.recv(1024)
+        print message
         if message:
             conn.send('Hi, I am a server, I received your\'s message: ' + message)
         else: break

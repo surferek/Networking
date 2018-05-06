@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#coding: utf-8
 
 import random
 import math
@@ -58,11 +60,10 @@ def SumNOT(MASKaddr):
 
     for i in MASKaddr:
         #print i
-        if i == str(0):
+        if not i != str(0):
             wynik.append(str(1))
         else:
             wynik.append(str(0))
-
 
     return "".join(wynik)
 
@@ -88,8 +89,8 @@ def maxHOST(IPaddr,MASK):
         if i == str(1):
             shortMask+=1
         else: pass
-
     wynik=math.pow(2,(binIP-shortMask))-2
+
     return wynik
 
 

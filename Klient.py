@@ -1,9 +1,8 @@
 #!/usr/bin/python
-#
-# KLIENT
-#
-import socket
+#coding: utf-8
 
+
+import socket
 import time
 
 def loop():
@@ -19,6 +18,7 @@ def sendPacket():
         s.connect(("127.0.0.1", 7677))
         start_time = time.time()
         msg=("--- %s sekund ---" % (time.time() - start_time))
+        #looper=loop()
         s.send(msg)
 
         resp = s.recv(1024)
@@ -30,3 +30,4 @@ def sendPacket():
 
 if __name__ == '__main__':
     sendPacket()
+

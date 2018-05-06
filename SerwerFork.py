@@ -1,10 +1,14 @@
-import os, socket
+#!/usr/bin/python
+#coding: utf-8
+
+import os
+import socket
 
 host="127.0.0.1"
 port=7677
 s=socket.socket()
 s.bind((host, port))
-s.listen(5)
+s.listen(13)
 
 def handle_client(s, addr, i):
     while True:
@@ -17,7 +21,7 @@ def handle_client(s, addr, i):
 
 def server():
     i=1
-    while i<=10:
+    while i<=13:
         c, addr=s.accept()
         child_pid=os.fork()
         if child_pid==0:
